@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, Button, StyleSheet } from 'react-native';
+
 export default function Home({ navigation }) {
 
   const [nombre, setNombre] = useState('');
@@ -17,7 +18,8 @@ export default function Home({ navigation }) {
 
       <Button
         title="Ir a la segunda pantalla"
-        onPress={() => navigation.navigate('About', { nombre })}
+        onPress={() => navigation.navigate('Info', { nombre })}
+        disabled={nombre.trim().length === 0}
       />
     </View>
   );
